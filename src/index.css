@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #0f1117;
+  color: #f1f5f9;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+/* Ingichka scrollbar (to'q tema) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2f3a;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4150;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 h-12 px-5 rounded-xl bg-brand text-white font-medium transition-colors hover:bg-brandDark active:scale-[0.99] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 h-12 px-5 rounded-xl bg-surface2 text-ink font-medium border border-line transition-colors hover:bg-line;
+  }
+  .input {
+    @apply w-full h-12 px-4 rounded-xl bg-surface2 border border-line text-ink placeholder:text-muted outline-none focus:border-brand transition-colors;
+  }
+  .card {
+    @apply bg-surface rounded-2xl border border-line p-4;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 h-8 px-3 rounded-lg text-sm font-medium;
+  }
+}
+
+/* Davomat matritsasi uchun yumshoq scroll */
+.scroll-x {
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
